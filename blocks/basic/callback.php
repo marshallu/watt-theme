@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic block for HerdPress theme
+ * Basic block for WATT theme
  *
  * @package marshallu/watt
  */
