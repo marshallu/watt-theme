@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying all pages.
  *
@@ -8,6 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
+ * @package marshallu/watt
  */
 
 namespace App;

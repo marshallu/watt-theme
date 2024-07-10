@@ -1,7 +1,8 @@
 <?php
-
 /**
  * The template for the 404 page
+ *
+ * @package marshallu/watt
  */
 
 namespace App;

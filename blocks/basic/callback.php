@@ -2,7 +2,7 @@
 /**
  * Basic block for HerdPress theme
  *
- * @package herdpress
+ * @package marshallu/watt
  */
 
 /**

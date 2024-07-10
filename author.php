@@ -5,6 +5,7 @@
  *
  * Methods for TimberHelper can be found in the /lib sub-directory
  *
+ * @package marshallu/watt
  */
 
 namespace App;
@@ -14,13 +15,13 @@ use Timber\Timber;
 $context = Timber::context();
 
 if ( isset( $context['author'] ) ) {
-	 $context['title'] = 'Archive of ' . $context['author']->name();
+	$context['title'] = 'Archive of ' . $context['author']->name();
 }
 
 Timber::render(
 	array(
 		'templates/author.twig',
-		'templates/archive.twig'
+		'templates/archive.twig',
 	),
 	$context
 );

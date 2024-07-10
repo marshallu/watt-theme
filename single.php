@@ -1,8 +1,10 @@
 <?php
-
 /**
  * The Template for displaying all single posts
+ *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package marshallu/watt
  */
 
 namespace App;
@@ -13,7 +15,7 @@ $context   = Timber::context();
 $post      = $context['post'];
 $templates = array(
 	'templates/single-' . $post->post_type . '.twig',
-	'templates/single.twig'
+	'templates/single.twig',
 );
 
 if ( post_password_required( $post->ID ) ) {

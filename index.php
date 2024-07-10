@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The main template file
  *
@@ -9,6 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package marshallu/watt
  */
 
 use Timber\Timber;

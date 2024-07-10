@@ -1,8 +1,10 @@
 <?php
-
 /**
  * Search results page
+ *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package marshallu/watt
  */
 
 use Timber\Timber;
