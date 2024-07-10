@@ -7,7 +7,7 @@
     "keywords": ["basic", "acf"],
     "acf": {
         "mode": "edit",
-        "renderCallback": "herdpress_basic_block"
+        "renderCallback": "watt_basic_block"
     },
     "supports": {
         "anchor": true
