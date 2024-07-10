@@ -22,7 +22,7 @@ find . -type f \
 	-not -path "*dist*" \
 	-not -path "*.git*" \
 	-not -path "*.idea*" \
-	| xargs sed -i '' -e "s/watt-theme/$THEME_UNDERSCORES/g"
+	| xargs sed -i '' -e "s/watt-theme/$THEME_DASHES/g"
 
 # Replace all instances of 'watt_' with the new dashed theme name
 find . -type f \
@@ -37,7 +37,7 @@ find . -type f \
 	-not -path "*dist*" \
 	-not -path "*.git*" \
 	-not -path "*.idea*" \
-	| xargs sed -i '' -e "s/watt_/$THEME_DASHES/g"
+	| xargs sed -i '' -e "s/watt_/$THEME_UNDERSCORES_/g"
 
 # Replace all instances of 'watt-theme' with the new dashed theme name
 find . -type f \
