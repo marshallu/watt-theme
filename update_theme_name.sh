@@ -7,7 +7,8 @@ if [[ $# -eq 0 ]] ; then
 	echo 'replacing my_new_theme_name with the name you want to use.'
 	exit 0
 fi
-mv ./source/css/watt.scss ./source/css/$THEME_NAME.css
+
+mv ./source/css/watt.css ./source/css/$THEME_NAME.css
 
 find . -type f \
 	-not -path "*png" \
@@ -20,6 +21,6 @@ find . -type f \
 	-not -path "*.git*" \
 	-not -path "*.idea*" \
 	-not -path "*.vscode*" \
-	-not -path "*.vendor*" \
+	-not -path "*vendor*" \
 	-not -path "*acf-json*" \
 	| xargs sed -i '' -e "s/watt/$THEME_NAME/g"
