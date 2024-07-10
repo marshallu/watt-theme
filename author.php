@@ -5,7 +5,7 @@
  *
  * Methods for TimberHelper can be found in the /lib sub-directory
  *
- * @package marshallu/watt
+ * @package marshallu/watt-theme
  */
 
 namespace App;

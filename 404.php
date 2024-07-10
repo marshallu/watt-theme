@@ -2,7 +2,7 @@
 /**
  * The template for the 404 page
  *
- * @package marshallu/watt
+ * @package marshallu/watt-theme
  */
 
 namespace App;

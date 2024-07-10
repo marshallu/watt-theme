@@ -2,7 +2,7 @@
 /**
  * Basic block for WATT Theme
  *
- * @package marshallu/watt
+ * @package marshallu/watt-theme
  */
 
 /**

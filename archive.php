@@ -7,7 +7,7 @@
  *
  * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package marshallu/watt
+ * @package marshallu/watt-theme
  */
 
 namespace App;

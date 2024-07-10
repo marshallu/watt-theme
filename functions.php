@@ -6,7 +6,7 @@
  * @link https://github.com/timber/starter-theme
  * @link https://github.com/marshallu/watt
  *
- * @package marshallu/watt
+ * @package marshallu/watt-theme
  */
 
 namespace App;
