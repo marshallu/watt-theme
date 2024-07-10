@@ -8,17 +8,20 @@ use Timber\Timber;
 /**
  * Class StarterSite
  */
-class StarterSite extends Site
-{
-	public function __construct()
-	{
+class StarterSite extends Site {
+	/**
+	 * StarterSite constructor.
+	 */
+	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'smartwp_disable_emojis' ) );
+		add_action( 'init', array( $this, 'register_block_json_files' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_styles_and_scripts' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'theme_info_box' ) );
 		add_action( 'admin_init', array( $this, 'remove_dashboard_meta' ) );
+		add_filter( 'allowed_block_types_all', array( $this, 'allowed_block_types' ), 10, 2 );
 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -30,26 +33,23 @@ class StarterSite extends Site
 	/**
 	 * This is where you can register custom post types.
 	 */
-	public function register_post_types()
-	{
+	public function register_post_types() {
 	}
 
 	/**
 	 * This is where you can register custom taxonomies.
 	 */
-	public function register_taxonomies()
-	{
+	public function register_taxonomies() {
 	}
 
 	/**
 	 * This is where you can register styles and scripts.
 	 */
-	public function register_styles_and_scripts()
-	{
+	public function register_styles_and_scripts() {
 		wp_enqueue_style( 'watt', get_template_directory_uri() . '/css/watt.css', array(), filemtime( get_theme_file_path( '/css/watt.css' ) ), 'all' );
 		wp_dequeue_style( 'wp-block-library' );
 		wp_dequeue_style( 'wp-block-library-theme' );
-		wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
+		wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS.
 	}
 
 	/**
@@ -91,7 +91,7 @@ class StarterSite extends Site
 	/**
 	 * Disable the emoji's
 	 */
-	function smartwp_disable_emojis() {
+	public function smartwp_disable_emojis() {
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -105,11 +105,11 @@ class StarterSite extends Site
 	/**
 	 * Filter function used to remove the tinymce emoji plugin.
 	 *
-	 * @param array $plugins
+	 * @param array $plugins Plugin list.
 	 *
 	 * @return array Difference betwen the two arrays
 	 */
-	function disable_emojis_tinymce( $plugins ) {
+	public function disable_emojis_tinymce( $plugins ) {
 		if ( is_array( $plugins ) ) {
 			return array_diff( $plugins, array( 'wpemoji' ) );
 		} else {
@@ -117,22 +117,56 @@ class StarterSite extends Site
 		}
 	}
 
+
+	/**
+	 * Register custom ACF blocks.
+	 */
+	public function register_block_json_files() {
+		$blocks = scandir( dirname( __DIR__ ) . '/blocks/' );
+		$blocks = array_values( array_diff( $blocks, array( '..', '.', '.DS_Store', '_base-block' ) ) );
+
+		foreach ( $blocks as $block ) {
+			if ( file_exists( dirname( __DIR__ ) . '/blocks/' . $block . '/block.json' ) ) {
+				register_block_type( dirname( __DIR__ ) . '/blocks/' . $block . '/block.json' );
+			}
+
+			if ( file_exists( dirname( __DIR__ ) . '/blocks/' . $block . '/callback.php' ) ) {
+				require_once dirname( __DIR__ ) . '/blocks/' . $block . '/callback.php';
+			}
+		}
+	}
+
+	/**
+	 * Disable the default WordPress blocks and enable our custom blocks.
+	 *
+	 * @param array $allowed_blocks Array of all blocks.
+	 * @return array
+	 */
+	public function allowed_block_types( $allowed_blocks ) {
+		$allowed_blocks = array(
+			'acf/basic',
+		);
+
+		return $allowed_blocks;
+	}
+
 	/**
 	 * This is where you add some context
 	 *
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
-	public function add_to_context( $context )
-	{
-		$context['foo']   = 'bar';
-		$context['menu']  = Timber::get_menu( 'site_menu' );
-		$context['site']  = $this;
+	public function add_to_context( $context ) {
+		$context['foo']  = 'bar';
+		$context['menu'] = Timber::get_menu( 'site_menu' );
+		$context['site'] = $this;
 
 		return $context;
 	}
 
-	public function theme_supports()
-	{
+	/**
+	 * This is where you set the default WordPress theme settings.
+	 */
+	public function theme_supports() {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -195,7 +229,7 @@ class StarterSite extends Site
 	/**
 	 * Return the srcset for images.
 	 *
-	 * @param string $id
+	 * @param string $id The image ID.
 	 *
 	 * @return false|string
 	 */
@@ -208,9 +242,8 @@ class StarterSite extends Site
 	 *
 	 * @param Twig\Environment $twig get extension.
 	 */
-	public function add_to_twig( $twig )
-	{
-		$twig->addFilter( new Twig\TwigFilter( 'srcset', array( $this, 'srcset' ) ) );
+	public function add_to_twig( $twig ) {
+		$twig->addFilter( new \Twig\TwigFilter( 'srcset', array( $this, 'srcset' ) ) );
 		return $twig;
 	}
 
@@ -223,8 +256,7 @@ class StarterSite extends Site
 	 *
 	 * @return array
 	 */
-	function update_twig_environment_options( $options )
-	{
+	public function update_twig_environment_options( $options ) {
 		// $options['autoescape'] = true;
 
 		return $options;

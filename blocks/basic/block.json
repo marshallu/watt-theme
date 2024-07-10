@@ -1,0 +1,15 @@
+{
+    "name": "acf/basic",
+    "title": "Basic Block",
+    "description": "Basic block.",
+    "category": "watt",
+    "icon": "site",
+    "keywords": ["basic", "acf"],
+    "acf": {
+        "mode": "edit",
+        "renderCallback": "herdpress_basic_block"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
