@@ -14,7 +14,7 @@ While developing locally run `npm run dev` to start the Tailwind CSS watcher, wh
 
 When ready to push to production run `npm run build` to build and minify Tailwind CSS.
 
-Please follow [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards) when developing the theme.
+Please follow [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/) when developing the theme.
 
 ## Other Resources
 - [WordPress](https://wordpress.org)
