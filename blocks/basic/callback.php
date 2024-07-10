@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic block for WATT theme
+ * Basic block for WATT Theme
  *
  * @package marshallu/watt
  */

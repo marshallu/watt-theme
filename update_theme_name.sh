@@ -3,7 +3,7 @@
 read -r -p "Enter Theme Name: " input
 THEME_NAME=$input
 THEME_LOWER=$(echo $THEME_NAME | tr '[:upper:]' '[:lower:]')
-THEME_UNDERSCORES="${THEME_LOWER// /_}"
+THEME_UNDERSCORES=$(echo $THEME_LOWER | tr ' ' '_')
 THEME_DASHES="${THEME_LOWER// /-}"
 
 # Rename CSS file
@@ -37,7 +37,7 @@ find . -type f \
 	-not -path "*dist*" \
 	-not -path "*.git*" \
 	-not -path "*.idea*" \
-	| xargs sed -i '' -e "s/watt_/$THEME_UNDERSCORES_/g"
+	| xargs sed -i '' -e "s/watt_/$THEME_UNDERSCORES/g"
 
 # Replace all instances of 'watt-theme' with the new dashed theme name
 find . -type f \

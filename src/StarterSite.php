@@ -47,7 +47,7 @@ class StarterSite extends Site {
 	 * This is where you can register styles and scripts.
 	 */
 	public function register_styles_and_scripts() {
-		wp_enqueue_style( 'watt', get_template_directory_uri() . '/css/watt.css', array(), filemtime( get_theme_file_path( '/css/watt.css' ) ), 'all' );
+		wp_enqueue_style( 'watt-theme', get_template_directory_uri() . '/css/watt-theme.css', array(), filemtime( get_theme_file_path( '/css/watt-theme.css' ) ), 'all' );
 		wp_dequeue_style( 'wp-block-library' );
 		wp_dequeue_style( 'wp-block-library-theme' );
 		wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS.
