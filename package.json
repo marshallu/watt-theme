@@ -1,8 +1,8 @@
 {
 	"private": true,
 	"scripts": {
-	  "dev": "npx tailwindcss -i ./source/css/herdpress.css -o ./css/herdpress.css --watch",
-	  "build": "npx tailwindcss -i ./source/css/herdpress.css -o ./css/herdpress.css --minify"
+	  "dev": "npx tailwindcss -i ./source/css/watt.css -o ./css/watt.css --watch",
+	  "build": "npx tailwindcss -i ./source/css/watt.css -o ./css/watt.css --minify"
 	},
 	"devDependencies": {
 	  "@marshallu/marsha-tailwind": "^3.3.0",

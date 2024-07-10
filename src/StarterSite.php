@@ -57,7 +57,7 @@ class StarterSite extends Site
 	 *
 	 * @return void
 	 */
-	public function herdpress_theme_info_box() {
+	public function theme_info_box() {
 		add_meta_box( 'theme_info', 'WATT Theme Details', array( $this, 'theme_info_box_content' ), 'dashboard', 'side', 'core' );
 	}
 

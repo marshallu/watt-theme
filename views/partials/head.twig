@@ -1,9 +1,39 @@
 <head>
-    <meta charset="{{ site.charset }}" />
-    <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="author" href="{{ site.theme.link }}/humans.txt" />
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    {% do action('get_header') %}
-    {{ function('wp_head') }}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://www.googletagmanager.com/">
+	<link rel="preconnect" href="https://www.marshall.edu/">
+	<link rel="preconnect" href="https://js.hs-scripts.com/">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net/">
+
+	<!-- Google Tag Manager -->
+	<!-- End Google Tag Manager -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+    {% do action( 'get_header' ) %}
+
+	{#
+	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+	#}
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+	{#
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+	<link rel="icon" href="/favicon.ico" sizes="32x32">
+	<link rel="icon" href="/icon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+	<link rel="manifest" href="/manifest.webmanifest">
+	#}
+
+	{{ function('wp_head') }}
 </head>
