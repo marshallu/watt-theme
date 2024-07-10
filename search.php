@@ -9,8 +9,10 @@ use Timber\Timber;
 
 $templates = array( 'templates/search.twig', 'templates/archive.twig', 'templates/index.twig' );
 
-$context = Timber::context([
-   'title' => 'Search results for ' . get_search_query(),
-]);
+$context = Timber::context(
+	array(
+		'title' => 'Search results for ' . get_search_query(),
+	),
+);
 
-Timber::render($templates, $context);
+Timber::render( $templates, $context );

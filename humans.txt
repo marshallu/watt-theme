@@ -1,8 +1,7 @@
 ## Team
 
-Your name or company
-https://yoursite.example
-@your_twitter_handle
+Christopher McComas
+Marshall University
 
 
 ## Site

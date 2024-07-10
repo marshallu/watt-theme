@@ -13,8 +13,14 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-if (isset($context['author'])) {
-	 $context['title'] = sprintf(__('Archive of %s', 'timber-starter'), $context['author']->name());
+if ( isset( $context['author'] ) ) {
+	 $context['title'] = 'Archive of ' . $context['author']->name();
 }
 
-Timber::render(array('templates/author.twig', 'templates/archive.twig'), $context);
+Timber::render(
+	array(
+		'templates/author.twig',
+		'templates/archive.twig'
+	),
+	$context
+);

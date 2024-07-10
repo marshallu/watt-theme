@@ -1,9 +1,6 @@
-# The Timber Starter Theme
+# WATT Theme
 
-[![Build Status](https://travis-ci.com/timber/starter-theme.svg?branch=master)](https://travis-ci.com/github/timber/starter-theme)
-[![Packagist Version](https://img.shields.io/packagist/v/timber/starter-theme?include_prereleases)](https://packagist.org/packages/timber/starter-theme)
-
-The "_s" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your SASS files, scripts, and task runners however you would like!
+This is forked from the "_s" for Timber: a dead-simple theme that you can build from. This theme comes ready to use with Alpine JS, Tailwind CSS and Timber.
 
 ## Installing the theme
 
