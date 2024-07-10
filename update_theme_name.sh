@@ -52,4 +52,4 @@ find . -type f \
 	-not -path "*dist*" \
 	-not -path "*.git*" \
 	-not -path "*.idea*" \
-	| xargs sed -i '' -e "s/WATT theme/$THEME_NAME/g"
+	| xargs sed -i '' -e "s/WATT Theme/$THEME_NAME/g"
