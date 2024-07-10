@@ -2,7 +2,7 @@
     "name": "acf/basic",
     "title": "Basic Block",
     "description": "Basic block.",
-    "category": "watt",
+    "category": "watt-theme",
     "icon": "site",
     "keywords": ["basic", "acf"],
     "acf": {
