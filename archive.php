@@ -34,7 +34,7 @@ if ( is_day() ) {
 
 $context = Timber::context(
 	array(
-		'title' => $title
+		'title' => $title,
 	),
 );
 
