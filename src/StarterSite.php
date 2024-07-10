@@ -18,6 +18,7 @@ class StarterSite extends Site {
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'smartwp_disable_emojis' ) );
 		add_action( 'init', array( $this, 'register_block_json_files' ) );
+		add_action( 'init', array( $this, 'register_options_page' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_styles_and_scripts' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'theme_info_box' ) );
 		add_action( 'admin_init', array( $this, 'remove_dashboard_meta' ) );
@@ -145,9 +146,27 @@ class StarterSite extends Site {
 	public function allowed_block_types( $allowed_blocks ) {
 		$allowed_blocks = array(
 			'acf/basic',
+			'core/freeform',
 		);
 
 		return $allowed_blocks;
+	}
+
+	/**
+	 * Register the theme options page.
+	 */
+	public function register_options_page() {
+		if ( function_exists( 'acf_add_options_page' ) ) {
+			acf_add_options_page(
+				array(
+					'page_title' => 'Theme Settings',
+					'menu_title' => 'Theme Settings',
+					'menu_slug'  => 'theme-settings',
+					'capability' => 'activate_plugins',
+					'redirect'   => false,
+				)
+			);
+		}
 	}
 
 	/**
