@@ -8,6 +8,9 @@ Getting started you will need to install theme dependencies with npm and compose
 2. Run `composer install` to install Timber, Twig, WordPress Coding Standards and other dependencies in the theme
 3. Run `npm install` to install Tailwind CSS and other dependencies.
 4. Ensure your project has ACF Pro installed and activated. This theme uses ACF Pro for blocks, custom fields and options pages.
+5. Run `./update_theme_name.sh my_new_theme_name` from the command line to update theme name across files.
+6. Update the proper theme name and description in `style.css` and `composer.json`.
+
 
 ## Theme Development
 While developing locally run `npm run dev` to start the Tailwind CSS watcher, which will compile CSS on every file save.
