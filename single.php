@@ -11,8 +11,9 @@ namespace App;
 
 use Timber\Timber;
 
-$context   = Timber::context();
-$post      = $context['post'];
+$context = Timber::context();
+$post    = $context['post'];
+
 $templates = array(
 	'templates/single-' . $post->post_type . '.twig',
 	'templates/single.twig',

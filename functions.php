@@ -24,8 +24,9 @@ if ( ! function_exists( 'acf_is_pro' ) ) {
 
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/StarterSite.php';
+
+require_once __DIR__ . '/src/class-watttheme.php';
 
 Timber::init();
 
-new StarterSite();
+new WattTheme();

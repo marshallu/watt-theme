@@ -8,7 +8,7 @@ use Timber\Timber;
 /**
  * Class StarterSite
  */
-class StarterSite extends Site {
+class WattTheme extends Site {
 	/**
 	 * StarterSite constructor.
 	 */
